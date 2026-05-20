@@ -1,0 +1,13 @@
+AI Resolution Rate = DIVIDE(Tickets[AI Resolved Tickets],[Total Tickets])
+
+AI Resolved Tickets = CALCULATE(COUNT(Tickets[TicketID]),Tickets[Resolved_By] = "AI Bot")
+
+Analyst Resolved Tickets = CALCULATE(COUNT(Tickets[TicketID]),Tickets[Resolved_By] = "Analyst")
+
+Avg Resolution Time = AVERAGE(Tickets[Resolution_Time_Hours])
+
+High Priority Tickets = CALCULATE(COUNT(Tickets[TicketID]),Tickets[Priority] = "High")
+
+SLA Compliance Percentage = DIVIDE(CALCULATE(COUNT(Tickets[TicketID]),Tickets[SLA_Metrics] = "Yes"), [Total Tickets])
+
+Total Tickets = COUNT(Tickets[TicketID])
